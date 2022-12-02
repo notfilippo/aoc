@@ -11,10 +11,11 @@ aoc 2018, 1 do
     input_stream()
     |> Enum.map(&String.to_integer/1)
     |> Stream.cycle()
-    |> Enum.reduce_while({0, MapSet.new([0])}, fn val, {sum , set} ->
+    |> Enum.reduce_while({0, MapSet.new([0])}, fn val, {sum, set} ->
       sum = sum + val
+
       if sum in set do
-       {:halt, sum}
+        {:halt, sum}
       else
         {:cont, {sum, MapSet.put(set, sum)}}
       end
