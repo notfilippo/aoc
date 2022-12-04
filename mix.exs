@@ -13,6 +13,7 @@ defmodule Aoc.MixProject do
   defp deps do
     [
       {:advent_of_code_utils, "~> 2.0"},
+      {:benchee, "~> 1.0", only: :dev},
       {:heap, "~> 2.0"}
     ]
   end
